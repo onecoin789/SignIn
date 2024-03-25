@@ -52,19 +52,18 @@ class SignInActivity : AppCompatActivity() {
             resultLauncher.launch(intent)
         }
     }
+
     private fun setResultNext() {
         resultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 if (result.resultCode == Activity.RESULT_OK) {
-                    val data: Intent? = result.data
-                    data?.let {
-                        val id = result.data?.getStringExtra("id") ?: ""
-                        val password = result.data?.getStringExtra("password") ?: ""
-                        edit_id.setText(id)
-                        edit_password.setText(password)
-                    }
+                    val id = result.data?.getStringExtra("id") ?: ""
+                    val password = result.data?.getStringExtra("password") ?: ""
+                    edit_id.setText(id)
+                    edit_password.setText(password)
                 }
             }
     }
 }
+
 
