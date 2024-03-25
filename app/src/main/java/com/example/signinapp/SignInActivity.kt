@@ -46,7 +46,7 @@ class SignInActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-        //btn_in2(회원가입 버튼)을 눌렀을 때 ShignUpActivity로 go!
+        //btn_in2(회원가입 버튼)을 눌렀을 때 SignUpActivity로 go!
         btn_in2.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             resultLauncher.launch(intent)
